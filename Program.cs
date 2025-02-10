@@ -144,6 +144,7 @@ static void Process3(string[,] products, int item)
 
 // Analisar as seções da exibição Execução e Depuração
 
+/*
 string? readResult;
 int startIndex = 0;
 bool goodEntry = false;
@@ -174,7 +175,7 @@ while (goodEntry == false)
 }
 
 // Display the sum and then pause.
-Console.WriteLine($"\n\rThe sum of numbers {startIndex} through {numbers.Length} is: {SumValues(numbers, startIndex)}");
+Console.WriteLine($"\n\rThe sum of numbers {startIndex} through {numbers.Length} is: {SumValues(numbers, startIndex - 1)}");
 
 Console.WriteLine("press Enter to exit");
 readResult = Console.ReadLine();
@@ -189,3 +190,18 @@ static int SumValues(int[] numbers, int n)
     }
     return sum;
 }
+*/
+
+// Monitorar as expressões de inspeção
+
+bool exit = false;
+var rand = new Random();
+int num1 = 5;
+int num2 = 5;
+
+do
+{
+    num1 = rand.Next(1, 11);
+    num2 = num1 + rand.Next(1, 51);
+
+} while (exit == false);
