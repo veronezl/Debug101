@@ -194,14 +194,42 @@ static int SumValues(int[] numbers, int n)
 
 // Monitorar as expressões de inspeção
 
+/*
 bool exit = false;
 var rand = new Random();
-int num1 = 5;
-int num2 = 5;
+int num1, num2;
 
 do
 {
     num1 = rand.Next(1, 11);
     num2 = num1 + rand.Next(1, 51);
+    double div = (double)num1 / num2;
 
-} while (exit == false);
+    Console.WriteLine($" A divisão entre {num2} e {num1} é {div}!");
+
+    Console.Write("Deseja sair? (s/n): ");
+    exit = Console.ReadLine().Equals("s", StringComparison.CurrentCultureIgnoreCase);
+
+} while (!exit);
+*/
+
+// Concluir uma atividade de desafio usando o depurador:
+
+// Desafio de estado de variável
+
+/*  
+This code instantiates a value and then calls the ChangeValue method
+to update the value. The code then prints the updated value to the console.
+*/
+int x = 5;
+x = ChangeValue(x);
+
+ChangeValue(x);
+
+Console.WriteLine(x);
+
+int ChangeValue(int value) 
+{
+    value = 10;
+    return value;
+}
