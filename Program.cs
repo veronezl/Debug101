@@ -500,6 +500,7 @@ foreach (string inputValue in inputValues)
 
 // Desafio de captura de exceções específicas:
 
+/*
 checked
 {
     try
@@ -550,3 +551,57 @@ catch (DivideByZeroException ex)
 }
 
 Console.WriteLine("Exiting program.");
+*/
+
+// Modulo - Criar e gerar exceções em aplicativos de console C# ==============================
+
+// Analisar como criar e gerar exceções em C#: 
+
+// Prompt the user for the lower and upper bounds
+Console.Write("Enter the lower bound: ");
+int lowerBound = int.Parse(Console.ReadLine());
+
+Console.Write("Enter the upper bound: ");
+int upperBound = int.Parse(Console.ReadLine());
+
+decimal averageValue = 0;
+
+try
+{
+    // Calcula a média dos números pares
+    averageValue = AverageOfEvenNumbers(lowerBound, upperBound);
+
+    // Exibe o resultado
+    Console.WriteLine($"The average of even numbers between {lowerBound} and {upperBound} is {averageValue}.");
+}
+catch (ArgumentOutOfRangeException ex)
+{
+    // Trata a exceção
+}
+
+// Wait for user input
+Console.ReadLine();
+
+static decimal AverageOfEvenNumbers(int lowerBound, int upperBound)
+{
+    if (lowerBound >= upperBound)
+    {
+        throw new ArgumentOutOfRangeException("upperBound", "ArgumentOutOfRangeException: upper bound must be greater than lower bound.");
+    }
+    int sum = 0;
+    int count = 0;
+    decimal average = 0;
+
+    for (int i = lowerBound; i <= upperBound; i++)
+    {
+        if (i % 2 == 0)
+        {
+            sum += i;
+            count++;
+        }
+    }
+
+    average = (decimal)sum / count;
+
+    return average;
+}
